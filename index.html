@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/9ad79c0b91.js" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: rgba(227, 227, 122, 0.501);
+    }
+
+    .z {
+        margin-top: 20px;
+        border-left: 5px solid blueviolet;
+    }
+
+    .main {
+        color: white;
+        margin-top: 20px;
+        border-right: 5px solid blueviolet;
+    }
+
+    #s {
+        background-color: rgba(147, 157, 88, 0.616);
+        margin: 100px 10% 10% 10%;
+    }
+
+    #s>div {
+        background-color: inherit;
+        display: flex;
+        /* background-color: rgb(250,250,250); */
+
+    }
+
+    .k>p,
+    .k>h3 {
+        background-color: blanchedalmond;
+        color: black;
+        margin-left: 10%;
+        width: 80%;
+
+    }
+
+    #cop {
+        text-align: center;
+    }
+
+    .navbar>* {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        transition: all 1s;
+    }
+
+    .wrapper {
+        width: 100%;
+        max-width: 1250px;
+        margin: 0 auto;
+        /*   background: blue; */
+    }
+
+    .d-flex {
+        display: flex;
+    }
+
+    .space-between {
+        justify-content: space-between;
+    }
+
+    .align-items {
+        align-items: center;
+    }
+
+    .navbar {
+        background-color: #202020;
+        padding: 12px 10px;
+    }
+
+    .navbar__left {
+        display: flex;
+        align-items: center;
+        /*   background: blue; */
+        flex: 1;
+    }
+
+    .navleftham {
+        color: white;
+        font-size: 1.3em;
+    }
+
+    .leftlogo {
+        margin-left: 2rem;
+        width: 90px;
+    }
+
+
+    .navcenter {
+        display: flex;
+        justify-content: center;
+        /*   background: red; */
+        margin: 0;
+        /*   width: 50%; */
+        flex: 6;
+    }
+
+    .navcenter__arrow {
+        color: white;
+        font-size: 1.25rem;
+        align-self: center;
+        margin-right: 1.5rem;
+        display: none;
+    }
+
+    .navcenter__input {
+        background: white;
+        width: 70%;
+        max-width: 600px;
+        border: 1px solid #313131;
+        padding: 6px;
+        margin: 0;
+        outline: none;
+        color: #858585;
+        font-size: 1em;
+    }
+
+    .navcenter__input::placeholder {
+        color: #858585;
+        padding-left: 0.2em;
+    }
+
+    .navcenter__input:focus {
+        border: 1px solid #2da0ff;
+    }
+
+    .navcenter__search-btn {
+        padding: 6px 30px;
+        max-width: 10%;
+        font-size: 1em;
+        background: #313131;
+        color: #858585;
+        border: none;
+        margin: 0;
+        max-width: 20%;
+    }
+
+    .navcenter__search-btn:hover i {
+        color: #a5a5a5;
+    }
+
+    .rightnav {
+        flex: 2;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .navrighticon {
+        color: white;
+        font-size: 1.25rem;
+    }
+
+    .navrighticon+.navrighticon {
+        margin-left: 1.5rem;
+    }
+
+    .fa-search.navrighticon {
+        display: none;
+    }
+
+    @media (max-width: 600px) {
+
+
+
+        .fa-search.navrighticon {
+            display: inline;
+        }
+
+        .navcenter {
+            display: none;
+        }
+    }
+</style>
+
+<body>
+    <nav class="navbar">
+        <div class="wrapper d-flex space-between justify-content align-items">
+            <div class="navbar__left">
+                <i class="fa fa-bars navleftham" aria-hidden="true"></i>
+                <img src="https://i.ya-webdesign.com/images/youtube-logo-2016-png-8.png" alt="youtube" width="60px"
+                    class="leftlogo">
+            </div>
+            <div class="navcenter">
+                <i class="fa fa-arrow-left navcenter__arrow" aria-hidden="true"></i>
+                <input id="val" autofocus type="text" class="navcenter__input" placeholder="Search">
+                <button onclick="search()" class="navcenter__search-btn"><i class="fa fa-search"
+                        aria-hidden="true"></i></button>
+            </div>
+
+            <div class="rightnav">
+                <i class="fa fa-search navrighticon" aria-hidden="true"></i>
+                <i class="fa fa-video-camera navrighticon" aria-hidden="true"></i>
+                <i class="fa fa-th navrighticon" aria-hidden="true"></i>
+                <i class="fa fa-bell navrighticon" aria-hidden="true"></i>
+                <i class="fa fa-user navrighticon" aria-hidden="true"></i>
+            </div>
+        </div>
+    </nav>
+    <div id="if">
+
+    </div>
+    <div id="s">
+
+    </div>
+    <p style="text-align: center;">Copyright © 2012. Deen Shah Scion. All Rights Reserved</p>
+</body>
+<script>
+    var firstvist=false
+    d=[
+    {
+        "kind": "youtube#searchResult",
+        "etag": "v_KBBUS0gW_0EXy2kfsWvLGJxBc",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "q7c5pLIa-X8"
+        },
+        "snippet": {
+            "publishedAt": "2022-04-28T13:50:12Z",
+            "channelId": "UCkI7vlAvkLivaK_GLyDtLOw",
+            "title": "How to get Youtube  API",
+            "description": "api #masai.",
+            "thumbnails": {
+                "default": {
+                    "url": "https://i.ytimg.com/vi/q7c5pLIa-X8/default.jpg",
+                    "width": 120,
+                    "height": 90
+                },
+                "medium": {
+                    "url": "https://i.ytimg.com/vi/q7c5pLIa-X8/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                },
+                "high": {
+                    "url": "https://i.ytimg.com/vi/q7c5pLIa-X8/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                }
+            },
+            "channelTitle": "Deen Shah Scion",
+            "liveBroadcastContent": "none",
+            "publishTime": "2022-04-28T13:50:12Z"
+        }
+    },
+    {
+        "kind": "youtube#searchResult",
+        "etag": "n_CSetJkrvVAvpxKOYmjnyY2ViA",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "cDNOlUnjSak"
+        },
+        "snippet": {
+            "publishedAt": "2022-04-03T07:15:17Z",
+            "channelId": "UCkI7vlAvkLivaK_GLyDtLOw",
+            "title": "DOM  AND  LOCALSTORAGE",
+            "description": "JAVASCRIPT.",
+            "thumbnails": {
+                "default": {
+                    "url": "https://i.ytimg.com/vi/cDNOlUnjSak/default.jpg",
+                    "width": 120,
+                    "height": 90
+                },
+                "medium": {
+                    "url": "https://i.ytimg.com/vi/cDNOlUnjSak/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                },
+                "high": {
+                    "url": "https://i.ytimg.com/vi/cDNOlUnjSak/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                }
+            },
+            "channelTitle": "Deen Shah Scion",
+            "liveBroadcastContent": "none",
+            "publishTime": "2022-04-03T07:15:17Z"
+        }
+    },
+    {
+        "kind": "youtube#searchResult",
+        "etag": "Hty5Z2QFTByF4P9DOaVc5jPf26k",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "6Re8f1vm8to"
+        },
+        "snippet": {
+            "publishedAt": "2020-05-10T12:50:04Z",
+            "channelId": "UCkI7vlAvkLivaK_GLyDtLOw",
+            "title": "अपने खाते पैसे    हरियाणा मुख्यमंत्री परिवार समृद्धि योजना (MMPSY)",
+            "description": "अपने खाते पैसे हरियाणा मुख्यमंत्री परिवार समृद्धि योजना पता लगाए ...",
+            "thumbnails": {
+                "default": {
+                    "url": "https://i.ytimg.com/vi/6Re8f1vm8to/default.jpg",
+                    "width": 120,
+                    "height": 90
+                },
+                "medium": {
+                    "url": "https://i.ytimg.com/vi/6Re8f1vm8to/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                },
+                "high": {
+                    "url": "https://i.ytimg.com/vi/6Re8f1vm8to/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                }
+            },
+            "channelTitle": "Deen Shah Scion",
+            "liveBroadcastContent": "none",
+            "publishTime": "2020-05-10T12:50:04Z"
+        }
+    },
+    {
+        "kind": "youtube#searchResult",
+        "etag": "1_NKwBV9x72B-aF4JQvpz5qpQeU",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "Ve1ZhXrLR38"
+        },
+        "snippet": {
+            "publishedAt": "2020-05-10T14:37:11Z",
+            "channelId": "UCkI7vlAvkLivaK_GLyDtLOw",
+            "title": "खातों में पैसे देखे  (हरियाणा मजदूरी एवं अन्य सन्निर्माण कर्मकार कल्याण बोर्ड)आधार कार्ड",
+            "description": "BOCW DBT Status during COVID-19 lockdown हरियाणा लेबर खातों में पैसे जानकारी ...",
+            "thumbnails": {
+                "default": {
+                    "url": "https://i.ytimg.com/vi/Ve1ZhXrLR38/default.jpg",
+                    "width": 120,
+                    "height": 90
+                },
+                "medium": {
+                    "url": "https://i.ytimg.com/vi/Ve1ZhXrLR38/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                },
+                "high": {
+                    "url": "https://i.ytimg.com/vi/Ve1ZhXrLR38/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                }
+            },
+            "channelTitle": "Deen Shah Scion",
+            "liveBroadcastContent": "none",
+            "publishTime": "2020-05-10T14:37:11Z"
+        }
+    },
+    {
+        "kind": "youtube#searchResult",
+        "etag": "GKswhiS8SaSGpQx8UCqFGe9cRf8",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "KpRqBAapOCM"
+        },
+        "snippet": {
+            "publishedAt": "2020-08-29T09:16:39Z",
+            "channelId": "UC8OkJs2wmwSLjKPNKHFILtA",
+            "title": "jammu kashmir का लाइसेंस है तो आप जेल जा सकते है ?",
+            "description": "https://youtu.be/M2VvQSo1lsA we tell about collectibles history and informtionabut safety features in family.",
+            "thumbnails": {
+                "default": {
+                    "url": "https://i.ytimg.com/vi/KpRqBAapOCM/default.jpg",
+                    "width": 120,
+                    "height": 90
+                },
+                "medium": {
+                    "url": "https://i.ytimg.com/vi/KpRqBAapOCM/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                },
+                "high": {
+                    "url": "https://i.ytimg.com/vi/KpRqBAapOCM/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                }
+            },
+            "channelTitle": "guns blog",
+            "liveBroadcastContent": "none",
+            "publishTime": "2020-08-29T09:16:39Z"
+        }
+    },
+    {
+        "kind": "youtube#searchResult",
+        "etag": "Qi_yNgnAnjGWLOm326rDKzM6RCk",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "wkNUq_UVGHk"
+        },
+        "snippet": {
+            "publishedAt": "2021-01-19T07:05:54Z",
+            "channelId": "UCI2E6tzjSbBPpaMdk8PkyYw",
+            "title": "Top Bangla Name for Muslim Boys | S&amp;R Letter New Name with Bangla Meaning",
+            "description": "Top Bangla Name for Boys | New Name with Bangla Meaning. Madina786 youtube channel for education here you can watch ...",
+            "thumbnails": {
+                "default": {
+                    "url": "https://i.ytimg.com/vi/wkNUq_UVGHk/default.jpg",
+                    "width": 120,
+                    "height": 90
+                },
+                "medium": {
+                    "url": "https://i.ytimg.com/vi/wkNUq_UVGHk/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                },
+                "high": {
+                    "url": "https://i.ytimg.com/vi/wkNUq_UVGHk/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                }
+            },
+            "channelTitle": "Madina 786",
+            "liveBroadcastContent": "none",
+            "publishTime": "2021-01-19T07:05:54Z"
+        }
+    },
+    {
+        "kind": "youtube#searchResult",
+        "etag": "OLP-8w3WfoP6-KzJze6E4J7knHU",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "GUg--uPBTdg"
+        },
+        "snippet": {
+            "publishedAt": "2020-08-21T10:11:34Z",
+            "channelId": "UCE1jcTWimOjZitbqtqS76CQ",
+            "title": "16 apple varieties grafted on single plant by Mr.  Shahnawaz Khan on 17 August 2020",
+            "description": "16 apple varieties grafted on single plant by Kashmir's most talented orchardist Mr. Shahnawaz Khan on 17 August 2020.",
+            "thumbnails": {
+                "default": {
+                    "url": "https://i.ytimg.com/vi/GUg--uPBTdg/default.jpg",
+                    "width": 120,
+                    "height": 90
+                },
+                "medium": {
+                    "url": "https://i.ytimg.com/vi/GUg--uPBTdg/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                },
+                "high": {
+                    "url": "https://i.ytimg.com/vi/GUg--uPBTdg/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                }
+            },
+            "channelTitle": "The Apple Farm",
+            "liveBroadcastContent": "none",
+            "publishTime": "2020-08-21T10:11:34Z"
+        }
+    },
+    {
+        "kind": "youtube#searchResult",
+        "etag": "yQ8eS0q57OxvewFBZVyMKvgngWQ",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "JNgAIc-nFSU"
+        },
+        "snippet": {
+            "publishedAt": "2016-07-14T05:27:46Z",
+            "channelId": "UCT_QwW7Tbew5qrYNb2auqAQ",
+            "title": "सामुदायिक प्रार्थना । दिन की बेहतरीन शुरुआत के लिए । शांति मंत्रों का सुरीला संगम | Sanskar TV",
+            "description": "संस्कार टीवी की ओर से सभी के लिए सामुदायिक प्रार्थना सुनिए अब YouTube पर. दिन की बेहतरीन और ...",
+            "thumbnails": {
+                "default": {
+                    "url": "https://i.ytimg.com/vi/JNgAIc-nFSU/default.jpg",
+                    "width": 120,
+                    "height": 90
+                },
+                "medium": {
+                    "url": "https://i.ytimg.com/vi/JNgAIc-nFSU/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                },
+                "high": {
+                    "url": "https://i.ytimg.com/vi/JNgAIc-nFSU/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                }
+            },
+            "channelTitle": "Sanskar TV",
+            "liveBroadcastContent": "none",
+            "publishTime": "2016-07-14T05:27:46Z"
+        }
+    },
+    {
+        "kind": "youtube#searchResult",
+        "etag": "uEuOhCGPOs_Ko-zeipcibpfH5KU",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "iKM7V7lc8dM"
+        },
+        "snippet": {
+            "publishedAt": "2021-03-19T17:30:15Z",
+            "channelId": "UCoKtB35BqX3rS2b8my3CF2w",
+            "title": "@Tech Burner STUDIO TOUR and GF REVEAL!!?? | Suhani Shah | VLOG 07",
+            "description": "Takniki Jwala urf @Tech Burner is one of the most humble and warm human beings I have met. Subscribe karlo jaldi see agar ...",
+            "thumbnails": {
+                "default": {
+                    "url": "https://i.ytimg.com/vi/iKM7V7lc8dM/default.jpg",
+                    "width": 120,
+                    "height": 90
+                },
+                "medium": {
+                    "url": "https://i.ytimg.com/vi/iKM7V7lc8dM/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                },
+                "high": {
+                    "url": "https://i.ytimg.com/vi/iKM7V7lc8dM/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                }
+            },
+            "channelTitle": "Suhani Shah",
+            "liveBroadcastContent": "none",
+            "publishTime": "2021-03-19T17:30:15Z"
+        }
+    },
+    {
+        "kind": "youtube#searchResult",
+        "etag": "kY6jSTYSIdVy_HjG4_tfHx6dy_M",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "QGgu2WEZrt4"
+        },
+        "snippet": {
+            "publishedAt": "2017-02-18T05:27:32Z",
+            "channelId": "UCi5WIqJL_Xo11L2GTv44n1A",
+            "title": "Mughal Princess  अब गरीबी में जीवन जी रही है आखिर क्यों ?",
+            "description": "The Story Of A Mughal Princess Who Now Lives In Poverty At A Kolkata Slum At the height of its power, the Mughal empire ruled ...",
+            "thumbnails": {
+                "default": {
+                    "url": "https://i.ytimg.com/vi/QGgu2WEZrt4/default.jpg",
+                    "width": 120,
+                    "height": 90
+                },
+                "medium": {
+                    "url": "https://i.ytimg.com/vi/QGgu2WEZrt4/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                },
+                "high": {
+                    "url": "https://i.ytimg.com/vi/QGgu2WEZrt4/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                }
+            },
+            "channelTitle": "India Trending",
+            "liveBroadcastContent": "none",
+            "publishTime": "2017-02-18T05:27:32Z"
+        }
+    },
+    {
+        "kind": "youtube#searchResult",
+        "etag": "KMnYF1uyB1wrIH8Umbxtn2HFTJ4",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "8M6PHpjQkI4"
+        },
+        "snippet": {
+            "publishedAt": "2019-12-04T17:52:05Z",
+            "channelId": "UCIa6jhd6ogDE_GtTfingzcg",
+            "title": "Fuler bashore priya Bangla song full album by hasu",
+            "description": "Please Subscribe My Channel and like this video.",
+            "thumbnails": {
+                "default": {
+                    "url": "https://i.ytimg.com/vi/8M6PHpjQkI4/default.jpg",
+                    "width": 120,
+                    "height": 90
+                },
+                "medium": {
+                    "url": "https://i.ytimg.com/vi/8M6PHpjQkI4/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                },
+                "high": {
+                    "url": "https://i.ytimg.com/vi/8M6PHpjQkI4/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                }
+            },
+            "channelTitle": "Sahin Hossen",
+            "liveBroadcastContent": "none",
+            "publishTime": "2019-12-04T17:52:05Z"
+        }
+    },
+    {
+        "kind": "youtube#searchResult",
+        "etag": "xZtl6Hm0i8QTjx1i5guSlcSFMZA",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "RpRK6ZKTFDA"
+        },
+        "snippet": {
+            "publishedAt": "2020-07-09T12:00:31Z",
+            "channelId": "UCIc_912ZCsZIZVWB0eLahxw",
+            "title": "Selection of mango scion immediately from tree/ आम की  कलम तुरंत कैसे चुने",
+            "description": "बगीचे में कलम करना हो तो संपर्क करे।पूरनलाल नागपुरे मोबाइल क्रमांक- 7038044131, 7350978355.",
+            "thumbnails": {
+                "default": {
+                    "url": "https://i.ytimg.com/vi/RpRK6ZKTFDA/default.jpg",
+                    "width": 120,
+                    "height": 90
+                },
+                "medium": {
+                    "url": "https://i.ytimg.com/vi/RpRK6ZKTFDA/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                },
+                "high": {
+                    "url": "https://i.ytimg.com/vi/RpRK6ZKTFDA/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                }
+            },
+            "channelTitle": "sunilkumar mutkure",
+            "liveBroadcastContent": "none",
+            "publishTime": "2020-07-09T12:00:31Z"
+        }
+    },
+    {
+        "kind": "youtube#searchResult",
+        "etag": "11kLTGGPkd2SImK_oaR_b30FCBQ",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "SmA6paXu7OQ"
+        },
+        "snippet": {
+            "publishedAt": "2016-06-07T07:07:22Z",
+            "channelId": "UCqk3_x2FUhPHXU51wiR1IsA",
+            "title": "Chupi Chupi Prem | Full Movie | ft Saimon | Priyonti | Bangla Movie",
+            "description": "Subscribe to : http://www.youtube.com/c/GSeriesBanglaMovies Cast : Saimon, Priyonti Producer : Md. Ripon Miah Story, Dialogue ...",
+            "thumbnails": {
+                "default": {
+                    "url": "https://i.ytimg.com/vi/SmA6paXu7OQ/default.jpg",
+                    "width": 120,
+                    "height": 90
+                },
+                "medium": {
+                    "url": "https://i.ytimg.com/vi/SmA6paXu7OQ/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                },
+                "high": {
+                    "url": "https://i.ytimg.com/vi/SmA6paXu7OQ/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                }
+            },
+            "channelTitle": "G Series Bangla Movies",
+            "liveBroadcastContent": "none",
+            "publishTime": "2016-06-07T07:07:22Z"
+        }
+    },
+    {
+        "kind": "youtube#searchResult",
+        "etag": "eMIYgxVDTUZHKcrduucVUVqO7EM",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "d0Y77F4Yo_c"
+        },
+        "snippet": {
+            "publishedAt": "2020-12-11T05:30:08Z",
+            "channelId": "UCvA6AUaE6JOulaYYMQ6XDXQ",
+            "title": "Aakhi Aalam Maa(n) Naam - Khursheed Nurali (Sheerazi)",
+            "description": "Vasant aavi mehekti pooshpo-ni pamraat Aatoor nayan-e nirakhti Shah Karim keri vaat Aakhi aalam maa(n) naam taaru(n) ...",
+            "thumbnails": {
+                "default": {
+                    "url": "https://i.ytimg.com/vi/d0Y77F4Yo_c/default.jpg",
+                    "width": 120,
+                    "height": 90
+                },
+                "medium": {
+                    "url": "https://i.ytimg.com/vi/d0Y77F4Yo_c/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                },
+                "high": {
+                    "url": "https://i.ytimg.com/vi/d0Y77F4Yo_c/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                }
+            },
+            "channelTitle": "Aly Sunderji",
+            "liveBroadcastContent": "none",
+            "publishTime": "2020-12-11T05:30:08Z"
+        }
+    },
+    {
+        "kind": "youtube#searchResult",
+        "etag": "FMR85Z6qDRUGpmaXxnOdtK54zGo",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "q5u0pEpuf8M"
+        },
+        "snippet": {
+            "publishedAt": "2018-11-27T14:38:34Z",
+            "channelId": "UCsaoYBUHz_lVB_dOmFwA9Zw",
+            "title": "Mirzapur: Top 5 Indian Web Series on Netflix &amp; Amazon Prime; Must Watch | FilmiBeat",
+            "description": "Mirzapur: Top 5 Indian Web Series on Netflix & Amazon Prime; Must Watch. Pankaj Tripathi, Divyendu Sharma, Ali Fazal, Vikrant ...",
+            "thumbnails": {
+                "default": {
+                    "url": "https://i.ytimg.com/vi/q5u0pEpuf8M/default.jpg",
+                    "width": 120,
+                    "height": 90
+                },
+                "medium": {
+                    "url": "https://i.ytimg.com/vi/q5u0pEpuf8M/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                },
+                "high": {
+                    "url": "https://i.ytimg.com/vi/q5u0pEpuf8M/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                }
+            },
+            "channelTitle": "FilmiBeat",
+            "liveBroadcastContent": "none",
+            "publishTime": "2018-11-27T14:38:34Z"
+        }
+    },
+    {
+        "kind": "youtube#searchResult",
+        "etag": "Qq5D0Y05LM00Okp5nSvRwXjWUQ8",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "gkYC1D-l24w"
+        },
+        "snippet": {
+            "publishedAt": "2021-05-30T06:56:45Z",
+            "channelId": "UCsM3qWjsbJr5Kt7_Q1ulLjg",
+            "title": "SIREN HEAD vs GODZILLA in real life | Rachitroo",
+            "description": "SIREN HEAD vs GODZILLA in real life | Rachitroo Follow Rachitroo on Instagram :▻ : https://www.instagram.com/rachitroo_1 ...",
+            "thumbnails": {
+                "default": {
+                    "url": "https://i.ytimg.com/vi/gkYC1D-l24w/default.jpg",
+                    "width": 120,
+                    "height": 90
+                },
+                "medium": {
+                    "url": "https://i.ytimg.com/vi/gkYC1D-l24w/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                },
+                "high": {
+                    "url": "https://i.ytimg.com/vi/gkYC1D-l24w/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                }
+            },
+            "channelTitle": "Rachitroo",
+            "liveBroadcastContent": "none",
+            "publishTime": "2021-05-30T06:56:45Z"
+        }
+    },
+    {
+        "kind": "youtube#searchResult",
+        "etag": "4hxo9xXUX1SZi_rWxLLbgxXA2zc",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "WQb0KQfF2-I"
+        },
+        "snippet": {
+            "publishedAt": "2019-06-28T15:56:43Z",
+            "channelId": "UCozVAUO1ydW7MN9meB3ShJQ",
+            "title": "Afridi Is Playing 4 Balls 9 Runs Needed",
+            "description": "Afridi Is Playing 4 Balls 6 Runs Needed.",
+            "thumbnails": {
+                "default": {
+                    "url": "https://i.ytimg.com/vi/WQb0KQfF2-I/default.jpg",
+                    "width": 120,
+                    "height": 90
+                },
+                "medium": {
+                    "url": "https://i.ytimg.com/vi/WQb0KQfF2-I/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                },
+                "high": {
+                    "url": "https://i.ytimg.com/vi/WQb0KQfF2-I/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                }
+            },
+            "channelTitle": "92 Cricket",
+            "liveBroadcastContent": "none",
+            "publishTime": "2019-06-28T15:56:43Z"
+        }
+    },
+    {
+        "kind": "youtube#searchResult",
+        "etag": "0g_2MP2NCpv0fqNbB4DBMDditgg",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "v9wDZfh-oog"
+        },
+        "snippet": {
+            "publishedAt": "2018-01-23T00:23:19Z",
+            "channelId": "UCuW0pOr5kjJ_kRqFuXt6AJQ",
+            "title": "ఏడేడు భువనాల మా సిరి వే | Sri Mahalakshmi Songs | Lakshmi Devi Songs Telugu | Goddess Lakshmi Songs",
+            "description": "Subscribe For More: ETLA NINU ETHUKUNDUNAMMA MAHALAKSHMI THALLI DEVI https://youtu.be/xC7e4MdKve0 ...",
+            "thumbnails": {
+                "default": {
+                    "url": "https://i.ytimg.com/vi/v9wDZfh-oog/default.jpg",
+                    "width": 120,
+                    "height": 90
+                },
+                "medium": {
+                    "url": "https://i.ytimg.com/vi/v9wDZfh-oog/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                },
+                "high": {
+                    "url": "https://i.ytimg.com/vi/v9wDZfh-oog/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                }
+            },
+            "channelTitle": "Telangana Devotional Songs",
+            "liveBroadcastContent": "none",
+            "publishTime": "2018-01-23T00:23:19Z"
+        }
+    },
+    {
+        "kind": "youtube#searchResult",
+        "etag": "_50O7WcQSDOhO9x4BCPFDjm2I8o",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "OlB0igsbEOo"
+        },
+        "snippet": {
+            "publishedAt": "2020-07-28T20:00:10Z",
+            "channelId": "UCMAGJ9Hhe_IjsiuYHrns8ag",
+            "title": "Simon *A Super Surprise* 100 min COMPILATION Season 2 Full episodes Cartoons for Children",
+            "description": "YouTube: https://www.youtube.com/c/SimonSuperRabbitEnglish?sub_confirmation=1 @Facebook: ...",
+            "thumbnails": {
+                "default": {
+                    "url": "https://i.ytimg.com/vi/OlB0igsbEOo/default.jpg",
+                    "width": 120,
+                    "height": 90
+                },
+                "medium": {
+                    "url": "https://i.ytimg.com/vi/OlB0igsbEOo/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                },
+                "high": {
+                    "url": "https://i.ytimg.com/vi/OlB0igsbEOo/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                }
+            },
+            "channelTitle": "Simon Super Rabbit [English]",
+            "liveBroadcastContent": "none",
+            "publishTime": "2020-07-28T20:00:10Z"
+        }
+    },
+    {
+        "kind": "youtube#searchResult",
+        "etag": "-BsMbvfudY5cc4raQuPJptcfyIg",
+        "id": {
+            "kind": "youtube#video",
+            "videoId": "W3ajCDZUjOA"
+        },
+        "snippet": {
+            "publishedAt": "2020-01-18T11:08:48Z",
+            "channelId": "UCp6orUpFdU3xASD6u3jhXXg",
+            "title": "Tanaji full story summary #2020 #TANAJI",
+            "description": "About TANAJI and Chhatrapati Shivaji. And my Gaming channel https://youtu.be/Tmq8hkhacjc.",
+            "thumbnails": {
+                "default": {
+                    "url": "https://i.ytimg.com/vi/W3ajCDZUjOA/default.jpg",
+                    "width": 120,
+                    "height": 90
+                },
+                "medium": {
+                    "url": "https://i.ytimg.com/vi/W3ajCDZUjOA/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                },
+                "high": {
+                    "url": "https://i.ytimg.com/vi/W3ajCDZUjOA/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                }
+            },
+            "channelTitle": "Roy #Desimusic",
+            "liveBroadcastContent": "none",
+            "publishTime": "2020-01-18T11:08:48Z"
+        }
+    }
+]
+ if(!firstvist){localStorage.setItem('sai',JSON.stringify(d))  
+localStorage.setItem('i',0)
+firstvist=true
+}
+i = localStorage.getItem("i")
+    var list = JSON.parse(localStorage.getItem("sai"))
+    var element = list[i]
+    // document.getElementsById("t").innerHTML=element.snippet.title
+    div = document.createElement("div")
+    div.className = 'k'
+    div.innerHTML = `  <iframe  style="width: 90%;height: 450px;margin-left:5%;"
+        src="https://www.youtube.com/embed/${element.id.videoId}" frameborder="1"></iframe>
+        <h3>${element.snippet.title}</h3>
+    <p calss='pb'>${element.snippet.publishTime.substring(0, 10)}</p>
+    <p calss='ch'><i style='margin-right:5px' class="fa-solid fa-circle-user"></i>${element.snippet.channelTitle}</p>
+
+        `
+    document.getElementById('if').append(div)
+    list.forEach((element, j) => {
+        if (i != j) {
+            //  console.log(element.id.videoId)
+            var k = document.querySelectorAll("z")
+            k.forEach((e) => e.remove())
+            console.log(element)
+            var div = document.createElement("div")
+            div.className = 'main'
+            var di = document.createElement("div")
+            var d = document.createElement("div")
+            d.className = 'info'
+            di.className = 'z'
+            di.innerHTML = ` <a href="video.html"><img   src="${element.snippet.thumbnails.medium.url}" alt=""></a>
+ `
+            di.addEventListener('click', () => { localStorage.setItem('i', j) })
+
+
+            d.innerHTML = `
+               
+                 <div>   <h3 style='margin-left:50px'>${element.snippet.title}</h3>
+    <p calss='pb'style='margin-left:50px'>${element.snippet.publishTime.substring(0, 10)}</p>
+    <p calss='ch' style='margin-left:50px'><i style='margin-right:5px' class="fa-solid fa-circle-user"></i>${element.snippet.channelTitle}</p>
+</div>`
+            div.append(di, d)
+            document.getElementById('s').append(div)
+
+
+
+
+
+
+            // for search functionalty
+
+        }
+    });
+    async function search() {
+        val = document.getElementById('val').value
+        if(val==undefined)
+        {
+            
+            val="Deen Shah Scion"
+        }   
+        appkey ="AIzaSyAYHyJqRGLtVePU1RSoxByWEoR9QJgTEVM"
+    console.log(val)
+    
+    u_rl = `https://www.googleapis.com/youtube/v3/search?key=${appkey}&q=${val}&type=video&part=snippet&maxResults=20`
+    console.log(appkey)
+ 
+ console.log(u_rl) 
+       try{
+      res =  await fetch(u_rl)
+      data= await res.json()
+      show(data)
+ }
+ catch(er){
+    console.log(er)
+ }
+
+    }
+
+
+
+function show(data){
+    data=data.items
+    console.log(data)
+    document.querySelector('#if').remove()
+
+             k = document.querySelectorAll(".main")
+            
+            k.forEach((e) => e.remove())
+            localStorage.setItem('sai',JSON.stringify(data))
+    data.forEach((element, j) => {
+        // if (i != j) {
+            //  console.log(element.id.videoId)
+            
+            console.log(element)
+            var div = document.createElement("div")
+            div.className = 'main'
+            var di = document.createElement("div")
+            var d = document.createElement("div")
+            d.className = 'info'
+            di.className = 'z'
+            di.innerHTML = ` <a href="video.html"><img   src="${element.snippet.thumbnails.medium.url}" alt=""></a>
+ `
+            di.addEventListener('click', () => { localStorage.setItem('i', j) })
+
+
+            d.innerHTML = `
+               
+                 <div>   <h3 style='margin-left:50px'>${element.snippet.title}</h3>
+    <p calss='pb'style='margin-left:50px'>${element.snippet.publishTime.substring(0, 10)}</p>
+    <p calss='ch' style='margin-left:50px'><i style='margin-right:5px' class="fa-solid fa-circle-user"></i>${element.snippet.channelTitle}</p>
+</div>`
+            div.append(di, d)
+            document.getElementById('s').append(div)
+
+
+
+
+
+
+            // for search functionalty
+
+        // }
+    });
+}
+</script>
+
+</html>
